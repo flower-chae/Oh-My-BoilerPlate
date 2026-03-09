@@ -1,7 +1,7 @@
 import time
 import uuid
 
-from src.core.logging import logger
+from loguru import logger
 
 
 class LoggingASGIMiddleware:

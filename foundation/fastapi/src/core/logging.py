@@ -24,7 +24,7 @@ def setup_logging():
         "diagnose": is_dev,  # ⚠️ 개발 환경에서만 True
     }
 
-    # 로그 디레토리 생성
+    # 로그 디렉토리 생성
     log_dir = Path("var/logs")
     log_dir.mkdir(parents=True, exist_ok=True)
 
@@ -44,7 +44,7 @@ def setup_logging():
     logger.add(
         log_file,
         rotation="00:00",  # 매일 새로운 파일 생성
-        retention="7 days",  # 60일 이상 지난 파일 삭제
+        retention="7 days",  # 7일 이상 지난 파일 삭제
         format=log_format,
         level=LOG_LEVEL,
         **common_config,
@@ -55,7 +55,7 @@ def setup_logging():
         serialize_log_file,
         serialize=True,
         rotation="00:00",  # 매일 새로운 파일 생성
-        retention="7 days",  # 30일 이상 지난 파일 삭제
+        retention="7 days",  # 7일 이상 지난 파일 삭제
         level=LOG_LEVEL,
         **common_config,
     )
@@ -63,7 +63,3 @@ def setup_logging():
     logger.add(sys.stderr, format=log_format, level=LOG_LEVEL, colorize=True, **common_config)
 
     return logger
-
-
-# 로깅 설정 실행
-logger = setup_logging()

@@ -4,7 +4,7 @@ import uuid
 from fastapi import Request
 from starlette.middleware.base import BaseHTTPMiddleware
 
-from src.core.logging import logger
+from loguru import logger
 
 
 class LoggingMiddleware(BaseHTTPMiddleware):

@@ -19,9 +19,12 @@ from src.core.exceptions import (
     app_exception_handler,
     global_exception_handler,
 )
+from src.core.logging import setup_logging
 from src.middleware import LoggingMiddleware
 from src.routers import sample_router
 
+# 로깅 초기화 (앱 시작 시점에 명시적으로 실행)
+setup_logging()
 
 app = FastAPI()
 

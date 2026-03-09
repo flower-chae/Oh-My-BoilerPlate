@@ -1,7 +1,7 @@
 from fastapi import Request
 from fastapi.responses import JSONResponse
 
-from src.core.logging import logger
+from loguru import logger
 
 
 async def global_exception_handler(request: Request, exc: Exception):
